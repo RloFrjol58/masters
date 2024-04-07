@@ -29,7 +29,7 @@ public class ControlDatosUS {
         modeloUS.setApellidoM(ApellidoM);
         modeloUS.setNombre(Nombre);
         modeloUS.setEmail(Email);
-        modeloUS.setNomUser(nombreUsuario);
+        modeloUS.setNombreUsuario(nombreUsuario);
         
         try {
             	
@@ -42,7 +42,7 @@ public class ControlDatosUS {
             ps.setString(2, modeloUS.getApellidoM());
             ps.setString(3, modeloUS.getNombre());
             ps.setString(4, modeloUS.getEmail());
-            ps.setString(5, modeloUS.getNomUser());
+            ps.setString(5, modeloUS.getNombreUsuario());
             
             System.out.println("ps:: " + ps);
             

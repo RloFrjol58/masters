@@ -35,18 +35,18 @@ public class Usuarios extends javax.swing.JInternalFrame {
             conet = con1.getConnection();
             st = conet.createStatement();
             rs = st.executeQuery(sql);
-            Object[] Profesor = new Object[8];
+            Object[] Usuarios = new Object[6];
             modeloUS = (DefaultTableModel) Tabla.getModel();
             
             while (rs.next()){
-                Profesor [0] = rs.getInt("ID");
-                Profesor [1] = rs.getString("ApellidoP");
-                Profesor [2] = rs.getString("ApellidoM");
-                Profesor [3] = rs.getString("Nombre");
-                Profesor [5] = rs.getString("Email");
-                Profesor [7] = rs.getString("Nombre de Usuario");
+                Usuarios [0] = rs.getInt("ID");
+                Usuarios  [1] = rs.getString("ApellidoP");
+                Usuarios  [2] = rs.getString("ApellidoM");
+                Usuarios  [3] = rs.getString("Nombre");
+                Usuarios  [4] = rs.getString("Email");
+                Usuarios  [5] = rs.getString("Nombre de Usuario");
                 
-                modeloUS.addRow(Profesor);
+                modeloUS.addRow(Usuarios );
             }
             Tabla.setModel(modeloUS);
             
@@ -77,7 +77,7 @@ public class Usuarios extends javax.swing.JInternalFrame {
         txtNomUser = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         btnGuardar = new javax.swing.JButton();
-        btnBuscar = new javax.swing.JButton();
+        btnVer = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -149,13 +149,13 @@ public class Usuarios extends javax.swing.JInternalFrame {
             }
         });
 
-        btnBuscar.setBackground(new java.awt.Color(204, 255, 255));
-        btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(0, 0, 0));
-        btnBuscar.setText("BUSCAR");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        btnVer.setBackground(new java.awt.Color(204, 255, 255));
+        btnVer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVer.setForeground(new java.awt.Color(0, 0, 0));
+        btnVer.setText("Ver Datos");
+        btnVer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
+                btnVerActionPerformed(evt);
             }
         });
 
@@ -177,7 +177,7 @@ public class Usuarios extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(btnGuardar)
                 .addGap(18, 18, 18)
-                .addComponent(btnBuscar)
+                .addComponent(btnVer)
                 .addGap(20, 20, 20)
                 .addComponent(btnBorrar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -188,7 +188,7 @@ public class Usuarios extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
-                    .addComponent(btnBuscar)
+                    .addComponent(btnVer)
                     .addComponent(btnBorrar))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -275,9 +275,11 @@ public class Usuarios extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidoMActionPerformed
 
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
+        LimpiarTabla();
+        consultar();
+        
+    }//GEN-LAST:event_btnVerActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
        borrar();
@@ -373,8 +375,8 @@ public class Usuarios extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla;
     private javax.swing.JButton btnBorrar;
-    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnVer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
