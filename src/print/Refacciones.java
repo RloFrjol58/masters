@@ -77,7 +77,7 @@ public class Refacciones extends javax.swing.JInternalFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Refacción ");
+        jLabel2.setText("Pieza ");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -196,7 +196,7 @@ public class Refacciones extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "Refacción", "Cantidad", "Precio"
+                "ID", "Pieza ", "Cantidad", "Precio"
             }
         ));
         jScrollPane1.setViewportView(tabla1);

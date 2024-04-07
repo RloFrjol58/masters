@@ -1,7 +1,7 @@
 
 package print;
 
-//import Insertar.ControlDatos;
+import datos.ControlDatosUS;
 import datos.Borrar;
 import java.sql.Connection;
 import java.sql.Statement;
@@ -23,6 +23,8 @@ public class Usuarios extends javax.swing.JInternalFrame {
     
     public Usuarios() {
         initComponents();
+        
+        consultar();
     }
     
     //Data query funcion 
@@ -74,8 +76,8 @@ public class Usuarios extends javax.swing.JInternalFrame {
         txtEmail = new javax.swing.JTextField();
         txtNomUser = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -137,18 +139,23 @@ public class Usuarios extends javax.swing.JInternalFrame {
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "OPCIONES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(204, 255, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("GUARDAR");
-
-        jButton2.setBackground(new java.awt.Color(204, 255, 255));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("BUSCAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setBackground(new java.awt.Color(204, 255, 255));
+        btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(0, 0, 0));
+        btnGuardar.setText("GUARDAR");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
+            }
+        });
+
+        btnBuscar.setBackground(new java.awt.Color(204, 255, 255));
+        btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(0, 0, 0));
+        btnBuscar.setText("BUSCAR");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -168,9 +175,9 @@ public class Usuarios extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btnGuardar)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btnBuscar)
                 .addGap(20, 20, 20)
                 .addComponent(btnBorrar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -180,8 +187,8 @@ public class Usuarios extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnBuscar)
                     .addComponent(btnBorrar))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -263,19 +270,26 @@ public class Usuarios extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Buttons of action 
     private void txtApellidoMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidoMActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
        borrar();
        LimpiarTabla();
        consultar();
     }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        agre();
+        LimpiarTabla();
+        consultar();
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     //Funtion of delete in the table Usuarios
     void borrar(){
@@ -299,14 +313,68 @@ public class Usuarios extends javax.swing.JInternalFrame {
     public void LimpiarTabla(){
         while (modeloUS.getRowCount() > 0) {
             modeloUS.removeRow(0);
+         }
     }
+    
+    void agre (){
+        
+        Boolean guardar = true;
+        String mensaje = "";
+        String ApellidoP = txtApellidoP.getText();
+        String ApellidoM = txtApellidoM.getText();
+        String Nombre = txtNombre.getText();
+        String Email = txtEmail.getText();
+        String NomUser = txtNomUser.getText();
+       
+        //conditionals of data insert
+        if(ApellidoP.length()==0){
+            guardar = false;
+            mensaje += "Escriba el apellido\n";
+        }
+        if(ApellidoM.length()==0){
+            guardar = false;
+            mensaje += "Escriba el apellido\n";
+        }
+        if(Nombre.length()==0){
+            guardar = false;
+            mensaje += "Escriba el nombre\n";
+        }
+        if(Email.length()==0){
+            guardar = false;
+            mensaje += "Escriba el email\n";
+        }
+        if(NomUser.length()==0){
+            guardar = false;
+            mensaje += "Escriba la categoria\n";
+        }
+        if(guardar){
+          ControlDatosUS control = new ControlDatosUS();
+          control.insertar(ApellidoP, ApellidoM, Nombre, Email, NomUser);
+          txtID.setText("1");
+          txtApellidoP.setText("");
+          txtApellidoM.setText("");
+          txtNombre.setText("");
+          txtEmail.setText("");
+          txtNomUser.setText("");
+          
+        }else JOptionPane.showMessageDialog(null, mensaje);
+        
     }
+    
+    private void TablaMouseClicked(java.awt.event.MouseEvent evt) {                                   
+        int fila = Tabla.getSelectedRow();
+        if (fila == -1){
+            JOptionPane.showMessageDialog(null, "No se selecciono fila");
+        }else {
+            //idc = Integer.parseInt(String) Tabla.getValueAt(fila, 0) .toString());
+        }
+    }          
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla;
     private javax.swing.JButton btnBorrar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
