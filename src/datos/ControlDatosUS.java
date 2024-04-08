@@ -34,7 +34,7 @@ public class ControlDatosUS {
         try {
             	
             con = conectar.getConnection();
-            sql = "insert into usuarios(ApellidoP, ApellidoM, Nombre, Email, nombreUsuario) values(?,?,?,?,?)";
+            sql = "insert into usuarios(apellidoP, apellidoM, nombre, email, nombreUsuario) values(?,?,?,?,?)";
             ps = con.prepareStatement(sql);
             
             // ps.setString(1, modelo.getID());

@@ -7,6 +7,8 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
     }
+    
+    
 
    
     @SuppressWarnings("unchecked")
@@ -20,10 +22,6 @@ public class Principal extends javax.swing.JFrame {
         btnRefacciones = new javax.swing.JButton();
         btnServicios = new javax.swing.JButton();
         btnMecanicos = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -34,9 +32,13 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setText("BIENVENIDO A RIP ");
 
         btnUsuarios.setBackground(new java.awt.Color(204, 255, 255));
-        btnUsuarios.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnUsuarios.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnUsuarios.setForeground(new java.awt.Color(0, 0, 0));
+        btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/print/racer_1505523.png"))); // NOI18N
         btnUsuarios.setText("REGISTRO USUARIOS");
+        btnUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnUsuarios.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnUsuarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuariosActionPerformed(evt);
@@ -46,7 +48,11 @@ public class Principal extends javax.swing.JFrame {
         btnRefacciones.setBackground(new java.awt.Color(204, 255, 255));
         btnRefacciones.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnRefacciones.setForeground(new java.awt.Color(0, 0, 0));
+        btnRefacciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/print/engine_4929182 (1).png"))); // NOI18N
         btnRefacciones.setText("MENU REFACCIONES");
+        btnRefacciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRefacciones.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnRefacciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnRefacciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefaccionesActionPerformed(evt);
@@ -56,7 +62,11 @@ public class Principal extends javax.swing.JFrame {
         btnServicios.setBackground(new java.awt.Color(204, 255, 255));
         btnServicios.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnServicios.setForeground(new java.awt.Color(0, 0, 0));
+        btnServicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/print/electric-car_4277608.png"))); // NOI18N
         btnServicios.setText("MENU SERVICIOS");
+        btnServicios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnServicios.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnServicios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnServicios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnServiciosActionPerformed(evt);
@@ -66,79 +76,50 @@ public class Principal extends javax.swing.JFrame {
         btnMecanicos.setBackground(new java.awt.Color(204, 255, 255));
         btnMecanicos.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnMecanicos.setForeground(new java.awt.Color(0, 0, 0));
+        btnMecanicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/print/superhero_1541693.png"))); // NOI18N
         btnMecanicos.setText("REGISTRO MECANICOS");
+        btnMecanicos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnMecanicos.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnMecanicos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnMecanicos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMecanicosActionPerformed(evt);
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/print/racer_1505523.png"))); // NOI18N
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/print/engine_4929182 (1).png"))); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/print/electric-car_4277608.png"))); // NOI18N
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/print/superhero_1541693.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addComponent(jLabel1)
+                .addContainerGap(94, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnMecanicos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnServicios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRefacciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jLabel1)))
-                .addGap(94, 94, 94))
+                    .addComponent(btnMecanicos)
+                    .addComponent(btnRefacciones, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addGap(64, 64, 64)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(btnUsuarios)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(btnRefacciones)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(btnServicios)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnMecanicos)
-                        .addGap(14, 14, 14)))
-                .addGap(51, 51, 51))
+                    .addComponent(btnUsuarios)
+                    .addComponent(btnRefacciones))
+                .addGap(98, 98, 98)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnServicios)
+                    .addComponent(btnMecanicos))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jDesktopPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -247,13 +228,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnMecanicos;
     private javax.swing.JButton btnRefacciones;
     private javax.swing.JButton btnServicios;
-    private javax.swing.JButton btnUsuarios;
+    public javax.swing.JButton btnUsuarios;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

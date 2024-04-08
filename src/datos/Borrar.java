@@ -40,7 +40,7 @@ public class Borrar {
             
             con = conectar.getConnection();
             // sql = "DELETE FROM profesor WHERE ID = ? ";
-            sql = "UPDATE profesor SET status = ? WHERE ID = ? ";
+            sql = "UPDATE usuarios SET status = ? WHERE ID = ? ";
             ps = con.prepareStatement(sql);
 
             // Parámetros para realizar la actualización
@@ -51,7 +51,7 @@ public class Borrar {
             System.out.println("sql:: " + ps);
             
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Se han insertado los datos");
+            JOptionPane.showMessageDialog(null, "Se han Borrado los datos");
         
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error de conexión:" + e.getMessage());
