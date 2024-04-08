@@ -4,11 +4,11 @@ package datos;
 public class ModeloDatosUS {
     
     private String ID;
-    private String apellidoP;
-    private String apellidoM;
-    private String nombre;
-    private String email;
-    private String nombreUsuario;
+    private String ApellidoP;
+    private String ApellidoM;
+    private String Nombre;
+    private String Email;
+    private String NombreUsuario;
 
     public String getID() {
         return ID;
@@ -19,43 +19,43 @@ public class ModeloDatosUS {
     }
 
     public String getApellidoP() {
-        return apellidoP;
+        return ApellidoP;
     }
 
-    public void setApellidoP(String apellidoP) {
-        this.apellidoP = apellidoP;
+    public void setApellidoP(String ApellidoP) {
+        this.ApellidoP = ApellidoP;
     }
 
     public String getApellidoM() {
-        return apellidoM;
+        return ApellidoM;
     }
 
-    public void setApellidoM(String apellidoM) {
-        this.apellidoM = apellidoM;
+    public void setApellidoM(String ApellidoM) {
+        this.ApellidoM = ApellidoM;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
     public String getNombreUsuario() {
-        return nombreUsuario;
+        return NombreUsuario;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setNombreUsuario(String NombreUsuario) {
+        this.NombreUsuario = NombreUsuario;
     }
 
     

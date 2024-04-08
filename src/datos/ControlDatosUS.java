@@ -19,16 +19,16 @@ public class ControlDatosUS {
     modeloUS = new ModeloDatosUS();
     }
     
-     public void insertar(String ApellidoP, String ApellidoM, String Nombre,
-                          String Email, String nombreUsuario ){
+     public void insertar(String apellidoP, String apellidoM, String nombre,
+                          String email, String nombreUsuario ){
   
         PreparedStatement ps;
         String sql;
-        // modelo.setID(ID);
-        modeloUS.setApellidoP(ApellidoP);
-        modeloUS.setApellidoM(ApellidoM);
-        modeloUS.setNombre(Nombre);
-        modeloUS.setEmail(Email);
+        //modeloUS.setID(ID);
+        modeloUS.setApellidoP(apellidoP);
+        modeloUS.setApellidoM(apellidoM);
+        modeloUS.setNombre(nombre);
+        modeloUS.setEmail(email);
         modeloUS.setNombreUsuario(nombreUsuario);
         
         try {

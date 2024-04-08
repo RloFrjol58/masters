@@ -25,34 +25,32 @@ public class Usuarios extends javax.swing.JInternalFrame {
         
     initComponents();
     
-    modeloUS = new DefaultTableModel();
+   // modeloUS = new DefaultTableModel();
     consultar();
 }
 
     
     //Data query funcion 
     void consultar(){
-        String sql = "select * from usuarios where status = 1";
+        String sql = "select * from usuarios";
         
         try{
             conet = con1.getConnection();
             st = conet.createStatement();
             rs = st.executeQuery(sql);
-            //Arreglo
-            
+            Object[] Usuarios = new Object[6];
             modeloUS = (DefaultTableModel) Tabla.getModel();
             
             while (rs.next()){
-                Object[] usuarios = new Object[6];
                 
-                usuarios [0] = rs.getInt("ID");
-                usuarios [1] = rs.getString("ApellidoP");
-                usuarios [2] = rs.getString("ApellidoM");
-                usuarios [3] = rs.getString("Nombre");
-                usuarios [4] = rs.getString("Email");
-                usuarios [5] = rs.getString("Nombre de Usuario");
+                Usuarios [0] = rs.getString("id");
+                Usuarios [1] = rs.getString("apellidoP");
+                Usuarios [2] = rs.getString("apellidoM");
+                Usuarios [3] = rs.getString("nombre");
+                Usuarios [4] = rs.getString("email");
+                Usuarios [5] = rs.getString("nombreUsuario");
                
-                modeloUS.addRow(usuarios );
+                modeloUS.addRow(Usuarios );
             }
             
             Tabla.setModel(modeloUS);
@@ -68,8 +66,6 @@ public class Usuarios extends javax.swing.JInternalFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Tabla = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -87,6 +83,8 @@ public class Usuarios extends javax.swing.JInternalFrame {
         btnVer = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Tabla = new javax.swing.JTable();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -105,20 +103,7 @@ public class Usuarios extends javax.swing.JInternalFrame {
         setResizable(true);
         setAutoscrolls(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        Tabla.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Apellido Paterno", "Apellido Materno", "Nombre", "Email", "Nombre de Usuario"
-            }
-        ));
-        jScrollPane1.setViewportView(Tabla);
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -150,7 +135,7 @@ public class Usuarios extends javax.swing.JInternalFrame {
             }
         });
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "OPCIONES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         btnGuardar.setBackground(new java.awt.Color(153, 255, 153));
@@ -194,7 +179,7 @@ public class Usuarios extends javax.swing.JInternalFrame {
                 .addComponent(btnVer)
                 .addGap(20, 20, 20)
                 .addComponent(btnBorrar)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,11 +196,28 @@ public class Usuarios extends javax.swing.JInternalFrame {
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("MENU USUARIOS");
 
+        Tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "apellidoP", "apellidoM", "nombre", "email", "nombreUsuario"
+            }
+        ));
+        jScrollPane2.setViewportView(Tabla);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
@@ -234,17 +236,13 @@ public class Usuarios extends javax.swing.JInternalFrame {
                             .addComponent(txtApellidoP, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtID, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNomUser))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 103, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,11 +275,11 @@ public class Usuarios extends javax.swing.JInternalFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addGap(10, 10, 10)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -400,14 +398,14 @@ public class Usuarios extends javax.swing.JInternalFrame {
         
     }
     
-    private void TablaMouseClicked(java.awt.event.MouseEvent evt) {                                   
+    /*private void TablaMouseClicked(java.awt.event.MouseEvent evt) {                                   
         int fila = Tabla.getSelectedRow();
         if (fila == -1){
             JOptionPane.showMessageDialog(null, "No se selecciono fila");
         }else {
             //idc = Integer.parseInt(String) Tabla.getValueAt(fila, 0) .toString());
         }
-    }          
+    }  */        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla;
@@ -424,7 +422,7 @@ public class Usuarios extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField txtApellidoM;
     private javax.swing.JTextField txtApellidoP;
     private javax.swing.JTextField txtEmail;
