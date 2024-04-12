@@ -7,13 +7,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
-public class Borrar {
+public class BorrarUS {
     
     private conexion conectar;
     private ModeloDatosUS modeloUS;
     private Connection con;
     
-    public Borrar(){
+    public BorrarUS(){
         conectar = new conexion();
         modeloUS = new ModeloDatosUS();
     }

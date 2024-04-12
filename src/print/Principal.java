@@ -71,7 +71,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setText("BIENVENIDO A RIP ");
 
         btnUsuarios.setBackground(new java.awt.Color(204, 255, 255));
-        btnUsuarios.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnUsuarios.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnUsuarios.setForeground(new java.awt.Color(0, 0, 0));
         btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/print/racer_1505523.png"))); // NOI18N
         btnUsuarios.setText("REGISTRO USUARIOS");
@@ -99,15 +99,15 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMecanicos)
                     .addComponent(btnRefacciones, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41))
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(184, 184, 184)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addGap(175, 175, 175))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +145,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRefaccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefaccionesActionPerformed
-        Refacciones v2 = new Refacciones();
+        Refaccion v2 = new Refaccion();
         v2.setVisible(true);
        
         if (!v2.isShowing()) {
@@ -217,7 +217,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnMecanicos;
     private javax.swing.JButton btnRefacciones;
     private javax.swing.JButton btnServicios;
-    private javax.swing.JButton btnUsuarios;
+    public javax.swing.JButton btnUsuarios;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
